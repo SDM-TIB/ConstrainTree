@@ -1,0 +1,254 @@
+@prefix lc: <http://synthetic-LC.org/lungCancer/vocab/> .
+@prefix lcS: <http://synthetic-LC.org/lungCancer/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+lcS:Protocol1 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Afatinib> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol10 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/EGFR_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Afatinib> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol11 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ALK_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Nivolumab> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol12 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ALK_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Carboplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol13 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/Unknown> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Afatinib> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol14 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Carboplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol15 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/EGFR_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Afatinib> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol16 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/EGFR_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Vinorelbine> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol17 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Vinorelbine> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol18 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/Unknown> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Carboplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol19 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/Unknown> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Carboplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol2 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ALK_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Cisplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol20 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Vinorelbine> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol21 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Cisplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol22 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/EGFR_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Cisplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol23 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ALK_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Vinorelbine> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol24 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Cisplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol25 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/Unknown> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Cisplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol3 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ALK_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Afatinib> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol4 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Nivolumab> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol5 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/EGFR_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Nivolumab> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/Yes> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol6 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/EGFR_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Carboplatin> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol7 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/Unknown> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Nivolumab> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol8 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ALK_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Vinorelbine> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
+lcS:Protocol9 a sh:NodeShape ;
+    sh:sparql [ sh:select """
+    SELECT ($this AS ?this) WHERE {
+        $this <http://synthetic-LC.org/lungCancer/vocab/biomarker> <http://synthetic-LC.org/lungCancer/entity/ROS1_Positive> ;
+              <http://synthetic-LC.org/lungCancer/vocab/drug> <http://synthetic-LC.org/lungCancer/entity/Afatinib> ;
+              <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> <http://synthetic-LC.org/lungCancer/entity/No> .
+    }
+""" ] ;
+    sh:targetClass lc:Patient .
+
