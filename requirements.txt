@@ -1,0 +1,5 @@
+numpy==1.23.5
+pandas==1.5.3
+rdfizer==4.5.5
+validating-models==0.9.6
+InterpretME==1.3.2
