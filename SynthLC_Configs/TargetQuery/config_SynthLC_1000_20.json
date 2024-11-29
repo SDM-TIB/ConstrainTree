@@ -1,0 +1,151 @@
+{
+  "Endpoint": "http://lc1000:8890/sparql",
+  "Type": "Patient",
+  "Index_var": "EHR",
+  "Independent_variable": {
+    "EHR": "?EHR a <http://synthetic-LC.org/lungCancer/vocab/Patient> . \n ",
+    "Sex": "?EHR <http://synthetic-LC.org/lungCancer/vocab/sex> ?Sex . \n ",
+    "AgeCategory": "?EHR <http://synthetic-LC.org/lungCancer/vocab/ageCategory> ?AgeCategory . \n ",
+    "Stage": "?EHR <http://synthetic-LC.org/lungCancer/vocab/stage> ?Stage . \n",
+    "Smoking_habits": "?EHR <http://synthetic-LC.org/lungCancer/vocab/smokingHabit> ?Smoking_habits . \n",
+    "Biomarker": "?EHR <http://synthetic-LC.org/lungCancer/vocab/biomarker> ?Biomarker . \n",
+    "DrugTreatment": "?EHR <http://synthetic-LC.org/lungCancer/vocab/drug> ?DrugTreatment . \n"
+  },
+  "Dependent_variable": {
+    "Relapse": "?EHR <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> ?Rel. BIND(IF(?Rel IN(<http://synthetic-LC.org/lungCancer/entity/Yes>),'Relapse', 'No_relapse') as ?Relapse). \n"
+  },
+  "Constraints": [
+    {
+      "name": "C1",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol1>"
+    },
+    {
+      "name": "C2",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol2>"
+    },
+    {
+      "name": "C3",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol3>"
+    },
+    {
+      "name": "C4",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol4>"
+    },
+    {
+      "name": "C5",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol5>"
+    },
+    {
+      "name": "C6",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol6>"
+    },
+    {
+      "name": "C7",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol7>"
+    },
+    {
+      "name": "C8",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol8>"
+    },
+    {
+      "name": "C9",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol9>"
+    },
+    {
+      "name": "C10",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol10>"
+    },
+    {
+      "name": "C11",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol11>"
+    },
+    {
+      "name": "C12",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol12>"
+    },
+    {
+      "name": "C13",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol13>"
+    },
+    {
+      "name": "C14",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol14>"
+    },
+    {
+      "name": "C15",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol15>"
+    },
+    {
+      "name": "C16",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol16>"
+    },
+    {
+      "name": "C17",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol17>"
+    },
+    {
+      "name": "C18",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol18>"
+    },
+    {
+      "name": "C19",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol19>"
+    },
+    {
+      "name": "C20",
+      "inverted": true,
+      "shape_schema_dir": "SynthLC_Shapes/Target_Query",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol20>"
+    }
+  ],
+  "classes": {
+    "class0": "Relapse",
+    "class1": "No_Relapse"
+  },
+  "3_valued_logic": false,
+  "sampling_strategy": "undersampling",
+  "number_important_features": 5,
+  "cross_validation_folds": 5,
+  "test_split": 0.3,
+  "model": "Random Forest",
+  "min_max_depth": 2,
+  "max_max_depth": 4
+}
