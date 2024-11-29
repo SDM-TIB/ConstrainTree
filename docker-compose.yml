@@ -1,0 +1,46 @@
+services:
+  lc1000:
+    image: prohde/virtuoso-opensource-7:7.2.11-alpine
+    container_name: lc1000
+    volumes:
+      - ./SynthLC_1000:/database
+    ports:
+      - "9000:8890"
+    networks:
+      - constraintree
+
+  lc10000:
+    image: prohde/virtuoso-opensource-7:7.2.11-alpine
+    container_name: lc10000
+    volumes:
+      - ./SynthLC_10000:/database
+    ports:
+      - "9001:8890"
+    networks:
+      - constraintree
+
+  lc100000:
+    image: prohde/virtuoso-opensource-7:7.2.11-alpine
+    container_name: lc100000
+    volumes:
+      - ./SynthLC_100000:/database
+    ports:
+      - "9002:8890"
+    networks:
+      - constraintree
+
+  constraintree:
+    image: constraintree
+    container_name: constraintree
+    build: .
+    volumes:
+      - ./SynthLC_Configs:/configs
+      - ./SynthLC_Shapes:/ConstrainTree/SynthLC_Shapes
+      - ./output:/ConstrainTree/output
+    networks:
+      - constraintree
+
+networks:
+  constraintree:
+    external: false
+
