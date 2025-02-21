@@ -1,0 +1,37 @@
+{
+  "Endpoint": "http://lc10000:8890/sparql",
+  "Type": "Patient",
+  "Index_var": "EHR",
+  "Independent_variable": {
+    "EHR": "?EHR a <http://synthetic-LC.org/lungCancer/vocab/Patient> . \n ",
+    "Sex": "?EHR <http://synthetic-LC.org/lungCancer/vocab/sex> ?Sex . \n ",
+    "AgeCategory": "?EHR <http://synthetic-LC.org/lungCancer/vocab/ageCategory> ?AgeCategory . \n ",
+    "Stage": "?EHR <http://synthetic-LC.org/lungCancer/vocab/stage> ?Stage . \n",
+    "Smoking_habits": "?EHR <http://synthetic-LC.org/lungCancer/vocab/smokingHabit> ?Smoking_habits . \n",
+    "Biomarker": "?EHR <http://synthetic-LC.org/lungCancer/vocab/biomarker> ?Biomarker . \n",
+    "DrugTreatment": "?EHR <http://synthetic-LC.org/lungCancer/vocab/drug> ?DrugTreatment . \n"
+  },
+  "Dependent_variable": {
+    "Relapse": "?EHR <http://synthetic-LC.org/lungCancer/vocab/hasRelapse> ?Rel. BIND(IF(?Rel IN(<http://synthetic-LC.org/lungCancer/entity/Yes>),'Relapse', 'No_relapse') as ?Relapse). \n"
+  },
+  "Constraints": [
+    {
+      "name": "C1",
+      "inverted": false,
+      "shape_schema_dir": "SynthLC_Shapes/SPARQL_Constraint",
+      "target_shape": "<http://synthetic-LC.org/lungCancer/shapes/Protocol1>"
+    }
+  ],
+  "classes": {
+    "class0": "Relapse",
+    "class1": "No_Relapse"
+  },
+  "3_valued_logic": false,
+  "sampling_strategy": "undersampling",
+  "number_important_features": 5,
+  "cross_validation_folds": 5,
+  "test_split": 0.3,
+  "model": "RFL",
+  "min_max_depth": 2,
+  "max_max_depth": 4
+}

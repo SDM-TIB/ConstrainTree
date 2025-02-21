@@ -42,12 +42,22 @@ def binary_classification(sampled_data, sampled_target, imp_features, cross_vali
     y = sampled_target['class']
 
     X_input, y_input = X.values, y.values
-    if model == 'Random Forest':
-        estimator = RandomForestClassifier(max_depth=4, random_state=0)
+    if model == 'Random Forest' or model == 'RFG':
+        estimator = RandomForestClassifier(max_depth=max_max_depth, random_state=0)
+    elif model == 'RFE':
+        estimator = RandomForestClassifier(max_depth=max_max_depth, random_state=0, criterion='entropy')
+    elif model == 'RFL':
+        estimator = RandomForestClassifier(max_depth=max_max_depth, random_state=0, criterion='log_loss')
     elif model == 'AdaBoost':
         estimator = AdaBoostClassifier(random_state=0)
-    elif model == 'Gradient Boosting':
+    elif model == 'Gradient Boosting' or model == 'GBLF':
         estimator = GradientBoostingClassifier(random_state=0)
+    elif model == 'GBLS':
+        estimator = GradientBoostingClassifier(random_state=0, loss='log_loss', criterion='squared_error')
+    elif model == 'GBEF':
+        estimator = GradientBoostingClassifier(random_state=0, loss='exponential', criterion='friedman_mse')
+    elif model == 'GBES':
+        estimator = GradientBoostingClassifier(random_state=0, loss='exponential', criterion='squared_error')
 
     cv = StratifiedShuffleSplit(n_splits=cross_validation, test_size=test_split, random_state=123)
     important_features = set()
@@ -101,7 +111,7 @@ def binary_classification(sampled_data, sampled_target, imp_features, cross_vali
     model_quality += '\t' + str(classificationreport.iloc[3]['f1-score'])   # F1_macro
     model_quality += '\t' + str(classificationreport.iloc[4]['precision'])  # P_micro
     model_quality += '\t' + str(classificationreport.iloc[4]['recall'])     # R_micro
-    model_quality += '\t' + str(classificationreport.iloc[4]['f1-score'])   # F-1_micro
+    model_quality += '\t' + str(classificationreport.iloc[4]['f1-score'])   # F1_micro
 
     utils.pbar.set_description('Preparing Plots Data', refresh=True)
     bool_feature = []
@@ -189,9 +199,6 @@ def read_KG(input_data, st):
     shacl_validation_results = base_dataset.get_shacl_schema_validation_results(
             constraints, rename_columns=True, replace_non_applicable_nans=True
     ) if validation else pd.DataFrame([])
-    print('Length of Validation Result:', len(shacl_validation_results))
-    print(shacl_validation_results)
-    print(shacl_validation_results['C1'].unique())
     utils.pbar.update(len(constraints))
 
     sample_to_node_mapping = base_dataset.get_sample_to_node_mapping().rename('node')
